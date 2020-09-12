@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> ADMIN PAGE</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+	    <div class="upper_nav">
+	        <div class="leftside">
+		        <div class="logo-image">
+	            	<img src="paw-icon.png" class="img-fluid"> 
+	        	</div>
+	          <div class="logo"><p><span>Adopt-A-Stray</span></p></div>
+	  	  </div> 
+		      <div class="rightside">
+		        <ul>
+		          <li><a href="#">ADMIN   </a></li>
+		          <li><a href="#">LOGOUT</a></li>
+		        </ul>
+		      </div>
+    	</div>
+	    <div class="lower_nav">
+	      <ul>
+	        <li class="active" ><a href="index.html">CATS</a></li>
+	        <li><a onclick="add()" id="OpenAddCat">ADD CATS</a></li>
+	        <li><a  onclick="update()" id = "OpenUpdate">UPDATE CATS</a></li>
+	        <li><a href="history.html">HISTORY</a></li>
+	      </ul>
+	    </div>
+	</div>
+
+<!-- <input id="toggleVisibilityButton" type="button" value="Add Cat"/> -->
+
+
+<!-- ADD CATS -->
+	<div class = "addcats" align="center">
+			<table id="displaytable2" style=  "display:none; border:1px solid black; margin-top: 20px;" BORDER="2" WIDTH="33%"   CELLPADDING="2" CELLSPACING="0">
+			  <tr><th>ADD CAT</th> <th>FILL OUT</th></tr>
+			  <tr ALIGN="CENTER">   <td><b>ID:</b></td> <td><input type="text" id="id" size="37"/></td> 	</tr>
+			  <tr ALIGN="CENTER">   <td><b>NAME:</b></td> <td><input type="text" id="name" size="37"/></td> </tr>
+			  <tr ALIGN="CENTER">   <td><b>BREED:</b></td> <td><input type="text" id="breed" size="37" /></td> </tr>
+			  <tr ALIGN="CENTER">   <td><b>SEX:</b></td><td><input type="text" id="sex" size="37" /></td></tr>
+			  <tr ALIGN="CENTER">   <td><b>AGE:</b></td> <td><input type="text" id="age" size="37"/></td> </tr>
+			  <tr ALIGN="CENTER"> 	<td><b>VACCINED?:</b></td><td><input type="text" id="vac" size="37"/></td></tr>
+			  <tr ALIGN="CENTER">	<td><b>NEUTURED?:</b></td> <td><input type="text" id="neut" size="37"/></td>	</tr>
+			  <tr ALIGN="CENTER">	<td><b>DESCRIPTION:</b></td> <td><input type="text" id="desc" size="37"/></td>	</tr>
+			  <tr ALIGN="CENTER">	<td><b>RESCUE DATE:</b></td> <td><input type="date" id="resc" size="37"/></td></tr>
+			  <tr ALIGN="CENTER">	<td><b>STATUS:</b></td> <td><select id="stats" name="Status" >
+																    <option value="avail">Available</option>
+																    <option value="proc">On Process</option>
+																    <option value="adopted">Adopted</option>
+																</select></td></tr>
+			  <tr ALIGN="CENTER">	<td><b>ADD PICTURE:</b></td> <td><<input type="file" id="pic" size="37"/></td></tr>
+			  <tr ALIGN="CENTER" > <td> <b>CONFIRM:</b></td> <td> <input type="button" id="butt"  value="ADD CAT" size="37"></td></tr>
+			</table>
+			<!-- <button ALIGN="CENTER" style=  "display:none" ><a id="button1">Add Cat</a></button> -->
+	</div>
+
+
+
+<!-- UPDATE CATS -->
+	<div class = "updatecats" align="center">
+			<table id="displaytable3" style=  "display:none; border:1px solid black; margin-top: 20px;" BORDER="2" WIDTH="33%"   CELLPADDING="2" CELLSPACING="0">
+			  <tr><tr><th>UPDATE CAT</th> <th>FILL OUT</th> </tr>
+			  <tr ALIGN="CENTER">   <td><b>SEARCH:</b></td> <td><input type="text" id="search" placeholder="Search.." size="37"/></td> </tr>
+			  <tr ALIGN="CENTER">   <td><b>ID:</b></td> <td><input type="text" id="id" size="37"/></td> 	</tr>
+			  <tr ALIGN="CENTER">   <td><b>NAME:</b></td> <td><input type="text" id="name" size="37"/></td> </tr>
+			  <tr ALIGN="CENTER">   <td><b>BREED:</b></td> <td><input type="text" id="breed" size="37" /></td> </tr>
+			  <tr ALIGN="CENTER">   <td><b>SEX:</b></td><td><input type="text" id="sex" size="37" /></td></tr>
+			  <tr ALIGN="CENTER">   <td><b>AGE:</b></td> <td><input type="text" id="age" size="37"/></td> </tr>
+			  <tr ALIGN="CENTER"> 	<td><b>VACCINED?:</b></td><td><input type="text" id="vac" size="37"/></td></tr>
+			  <tr ALIGN="CENTER">	<td><b>NEUTURED?:</b></td> <td><input type="text" id="neut" size="37"/></td>	</tr>
+			  <tr ALIGN="CENTER">	<td><b>DESCRIPTION:</b></td> <td><input type="text" id="desc" size="37"/></td>	</tr>
+			  <tr ALIGN="CENTER">	<td><b>RESCUE DATE:</b></td> <td><input type="date" id="resc" size="37"/></td></tr>
+			  <tr ALIGN="CENTER">	<td><b>STATUS:</b></td> <td><select id="stats" name="Status" >
+																    <option value="avail">Available</option>
+																    <option value="proc">On Process</option>
+																    <option value="adopted">Adopted</option>
+																</select></td></tr>
+			  <tr ALIGN="CENTER">	<td><b>ADD PICTURE:</b></td> <td><<input type="file" id="pic" size="37"/></td></tr>
+			  <tr ALIGN="CENTER" > <td> <b>CONFIRM:</b></td> <td> <input type="button" id="butt"  value="UPDATE CAT" size="37"></td></tr>
+			</table>
+			<!-- <button ALIGN="CENTER" style=  "display:none" ><a id="button1">Add Cat</a></button> -->
+	</div>
+
+
+
+
+	<div class = "CatList">
+		<table style="border:1px solid black; margin-left:auto; margin-right:auto; margin-top: 20px;" BORDER="2" WIDTH="90%"   CELLPADDING="9" CELLSPACING="0">
+		<H2 class = "titlelist" style = "margin-top: 30px; margin-left: 60px; margin-bottom: 10px ">CAT LIST</H2>
+		<button class = "buttonstyle" >DELETE</button>
+    	    <tr ALIGN="CENTER">
+		    <td><b>ID</b></td>
+		    <td><b>NAME</b></td>
+		    <td><b>BREED</b></td>
+		    <td><b>SEX</b></td>
+		    <td><b>AGE</b></td>
+		    <td><b>VACCINED?</b></td>
+		    <td><b>NEUTURED?</b></td>
+		    <td><b>DESCRIPTION</b></td>
+		    <td><b>RESCUE DATE</b></td>
+		    <td><b>STATUS</b></td>
+		  </tr>
+
+		  <tr ALIGN="CENTER">
+		  	<td>1</td>
+		  	<td>Snow</td>
+		  	<td>Tabby</td>
+		  	<td>F</td>
+		  	<td>2 Y.O.</td>
+		  	<td>Y</td>
+		  	<td>Y</td>
+		  	<td>Funny and Playful</td>
+		    <td>01/18/2020</td>
+		    <td>Available</td>
+		  </tr>
+
+		  <tr ALIGN="CENTER">
+		    <td>2</td>
+		  	<td>Jack</td>
+		  	<td>Persian</td>
+		  	<td>M</td>
+		  	<td>8 Y.O.</td>
+		  	<td>Y</td>
+		  	<td>N</td>
+		  	<td>Pure and Loving</td>
+		    <td>04/27/2020</td>
+		    <td>Available</td>
+		  </tr>
+
+		  <tr ALIGN="CENTER">
+		    <td>3</td>
+		  	<td>Tiger</td>
+		  	<td>Lynx</td>
+		  	<td>M</td>
+		  	<td>5 Y.O.</td>
+		  	<td>Y</td>
+		  	<td>Y</td>
+		  	<td>Has trust issues but iz good</td>
+		    <td>07/15/2020</td>
+		    <td>Available</td>
+		  </tr>
+		</table>
+	</div>
+
+
+
+	<script>
+
+	function add(){
+	document.getElementById("OpenAddCat").addEventListener("click", function(button) {    
+	   if (document.getElementById("displaytable2").style.display === "none") 
+	   		document.getElementById("displaytable2").style.display = "block";
+	   else document.getElementById("displaytable2").style.display = "none";
+
+	});}
+
+	function update(){
+	document.getElementById("OpenUpdate").addEventListener("click", function(button) {    
+	   if (document.getElementById("displaytable3").style.display === "none") 
+	   		document.getElementById("displaytable3").style.display = "block";
+	   else document.getElementById("displaytable3").style.display = "none";
+	});}
+
+
+	window.onload = function () {
+    function highlight(e) {
+        if (selected[0]) selected[0].className = '';
+        e.target.parentNode.className = 'selected';    
+    }    
+
+    var table = document.getElementById('displaytable2'),
+        selected = table.getElementsByClassName('selected');
+    table.onclick = highlight;
+
+        $("#tst").click(function () {
+        var value = $(".selected td:first").html();
+        value = value || "No row Selected";
+        alert(value);
+    });
+	};
+
+	</script>
+
+
+
+</body>
+</html>
